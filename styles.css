@@ -1,0 +1,225 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-areas: "aside galeria carrito";
+  width: 100vw;
+  height: 85vh;
+}
+
+.aside {
+  grid-area: aside;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("./assets/cerrar-manos-tocando-ropa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+.galeria {
+  grid-area: galeria;
+}
+
+.carrito {
+  grid-area: carrito;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "lista-productos"
+    "footer";
+  position: relative;
+  background-image: url("./assets/carrito-juguete-pequeno.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+.carrito-header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  color: #f3f4f8;
+}
+
+.lista-productos {
+  grid-area: lista-productos;
+}
+
+.carrito-footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8px;
+}
+
+/* Componentes */
+
+.btn-mostrar-ofertas {
+  position: absolute;
+  top: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-mostrar-ofertas span {
+  margin-left: 8px;
+}
+
+
+.btn-ocultar-ofertas{
+  position: absolute;
+  top: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ofertas */
+
+.ofertas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "img desc talle"
+    "img boton boton";
+  padding: 10px;
+  width: 90%;
+  height: 30%;
+  margin: 10px;
+  color: black;
+  background-color: #ffffff5e;
+  gap: 7px;
+}
+
+.ofertas p {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ofertas span {
+  font-weight: 300;
+}
+
+.ofertas-contenedor {
+  margin-top: 5px;
+  width: 90%;
+  height: 80%;
+  border-radius: 8px;
+  max-width: 100%;
+  overflow: auto;
+  background-color: #80808045;
+}
+
+.oferta-img {
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+}
+
+.oferta-descripcion {
+  grid-area: desc;
+}
+
+.btn-agregar-oferta {
+  grid-area: boton;
+  margin: 3px;
+}
+
+/* Galeria  */
+
+.galeria-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("./assets/concepto-maqueta-camisa-ropa-sencilla.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.contenedor-producto {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "imagen descripcion";
+  width: 95%;
+  height: 12em;
+  background-color: #ccccccb8;
+  margin: 5px;
+  gap: 5px;
+  max-height: 400px;
+}
+
+.producto-imagen {
+  grid-area: imagen;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0px 0px 5px black);
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.producto-descripcion {
+  grid-area: descripcion;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:
+    1fr
+    1fr;
+  grid-template-areas:
+    "titulo talle"
+    "boton boton";
+  width: 100%;
+  align-items: center;
+}
+
+.titulo-remera {
+  grid-area: titulo;
+  font-weight: 600;
+}
+
+.talle {
+  grid-area: talle;
+  text-align: center;
+  border-radius: 10px;
+  height: 70%;
+}
+
+.btn-agregar {
+  grid-area: boton;
+  margin: 3px;
+}
+
+/* Carrito final */
+
+.lista-productos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f3f4f8;
+}
+
+.precio-final {
+  list-style-type: none;
+}
+
+
+/* Form */
+
+.form-container{
+  background-color: #f3f4f8;
+}

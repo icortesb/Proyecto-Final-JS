@@ -1,0 +1,43 @@
+[
+  {
+    "nombre": "Remera",
+    "modelo": "Ibiza",
+    "precio": 1500,
+    "id": 1,
+    "talle": "Small",
+    "imagen": "assets/oferta1.jpg"
+  },
+  {
+    "nombre": "Jean",
+    "modelo": "Tokio",
+    "precio": 2500,
+    "id": 2,
+    "talle": "Large",
+    "imagen": "assets/oferta2.jpg"
+  },
+  {
+    "nombre": "Gorra",
+    "modelo": "Los Angeles",
+    "precio": 3500,
+    "id": 3,
+    "talle": "Large",
+    "imagen": 43245
+  },
+  {
+    "nombre": "Zapatillas",
+    "modelo": "Frankfurt",
+    "precio": 4500,
+    "id": 4,
+    "talle": "Medium",
+    "imagen": 43245
+  },
+  {
+    "nombre": "Bermuda de jean",
+    "modelo": "Cancun",
+    "precio": 5500,
+    "id": 5,
+    "talle": "Small",
+    "imagen": 43245
+  }
+  
+]

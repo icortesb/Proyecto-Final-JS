@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto final Coderhouse</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- Sweet alert -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Coderhouse compras</span>
+      </div>
+    </nav>
+    <main>
+      <div class="grid-container">
+        <!-- Aside -->
+        <aside id="ofertas" class="container aside">
+          <button id="btn-ofertas" class="btn btn-primary btn-mostrar-ofertas">
+            Mostrar ofertas
+            <span
+              id="spinner"
+              style="display: none"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          </button>
+          <button
+            id="ocultar-ofertas"
+            class="btn btn-danger btn-ocultar-ofertas"
+            style="display: none"
+          >
+            Ocultar ofertas
+          </button>
+          <section
+            id="ofertas-contenedor"
+            class="ofertas-contenedor"
+            style="display: none"
+          ></section>
+        </aside>
+        <!-- Galeria -->
+        <section class="galeria">
+          <div class="galeria-contenedor">
+            <!-- Remera blanca -->
+
+            <div class="contenedor-producto">
+              <img
+                class="producto-imagen"
+                src="./assets/remera-blanca.jpg"
+                alt="Remera blanca"
+              />
+              <div class="producto-descripcion">
+                <div class="titulo-remera">
+                  <p>Remera blanca</p>
+                  <p>Precio: $5000</p>
+                </div>
+                <select
+                  id="talle-remera-blanca"
+                  class="form-select talle"
+                  aria-label="Default select example"
+                >
+                  <option selected value="Sin talle">Talle</option>
+                  <option value="S">Small</option>
+                  <option value="M">Medium</option>
+                  <option value="L">Large</option>
+                  <option value="XL">XL</option>
+                </select>
+
+                <button
+                  id="agregar-remera-blanca"
+                  class="btn btn-primary btn-agregar"
+                >
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+            <!-- Remera negra -->
+            <div class="contenedor-producto">
+              <img
+                class="producto-imagen"
+                src="./assets/remera-negra.jpg"
+                alt="Remera blanca"
+              />
+              <div class="producto-descripcion">
+                <div class="titulo-remera">
+                  <p>Remera negra</p>
+                  <p>Precio: $4000</p>
+                </div>
+                <select
+                  id="talle-remera-negra"
+                  class="form-select talle"
+                  aria-label="Default select example"
+                >
+                  <option selected value="Sin talle">Talle</option>
+                  <option value="S">Small</option>
+                  <option value="M">Medium</option>
+                  <option value="L">Large</option>
+                  <option value="XL">XL</option>
+                </select>
+
+                <button
+                  id="agregar-remera-negra"
+                  class="btn btn-primary btn-agregar"
+                >
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+            <!-- Remera roja -->
+            <div class="contenedor-producto">
+              <img
+                class="producto-imagen"
+                src="./assets/remera-roja.jpg"
+                alt="Remera blanca"
+              />
+              <div class="producto-descripcion">
+                <div class="titulo-remera">
+                  <p>Remera roja</p>
+                  <p>Precio: $3500</p>
+                </div>
+                <select
+                  id="talle-remera-roja"
+                  class="form-select talle"
+                  aria-label="Default select example"
+                >
+                  <option selected value="sin talle">Talle</option>
+                  <option value="S">Small</option>
+                  <option value="M">Medium</option>
+                  <option value="L">Large</option>
+                  <option value="XL">XL</option>
+                </select>
+
+                <button
+                  id="agregar-remera-roja"
+                  class="btn btn-primary btn-agregar"
+                >
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Carrito -->
+        <section class="carrito">
+          <div class="carrito-header">
+            <h2>Carrito de compras</h2>
+          </div>
+          <div class="lista-productos">
+            <ul id="lista-productos"></ul>
+            <ul>
+              <li id="precio-final" class="precio-final"></li>
+            </ul>
+          </div>
+          <div class="carrito-footer">
+            <button id="eliminar-ultimo" class="btn btn-info">
+              Eliminar último
+            </button>
+            <button id="finalizar-compra" class="btn btn-danger">
+              Finalizar compra
+            </button>
+          </div>
+        </section>
+        <!-- Form -->
+        <div class="form-container carrito" style="display: none;">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Example textarea</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Toastify script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
